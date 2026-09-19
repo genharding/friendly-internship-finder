@@ -1,0 +1,10 @@
+.env
+.env.local
+config.json
+.venv/
+*.log
+.vscode/
+Thumbs.db
+.DS_Store
+*.pyc
+*.exe
