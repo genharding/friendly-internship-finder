@@ -34,6 +34,10 @@ def search():
 
     return data
 
+
+
+
+###May or may not need either
 connect = sqlite3.connect('majors.db')
 connect.execute('''
     CREATE TABLE IF NOT EXISTS Majors (
