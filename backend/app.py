@@ -24,6 +24,7 @@ def search():
         "job_titles": ["Software Engineer"],
         "keywords": ["Python"],
         "limit": 10,
+        "job_types": ["Internship"],
     }
 
     response = requests.post(url, json=body, headers=headers)
