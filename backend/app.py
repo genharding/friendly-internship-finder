@@ -52,7 +52,6 @@ connect2.execute('''
     )
     ''')
 
-
 #################################
 #probably don't need this
 @app.route('/join', methods=['POST'])
