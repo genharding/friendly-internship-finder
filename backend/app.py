@@ -35,33 +35,43 @@ def search():
 
     return data
 
-connect = sqlite3.connect('app.db')
+connect = sqlite3.connect('majors.db')
 connect.execute('''
-    CREATE TABLE IF NOT EXISTS Classes (
+    CREATE TABLE IF NOT EXISTS Majors (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    major TEXT NOT NULL,
-    class TEXT NOT NULL
+    degree TEXT NOT NULL,
+    course_name TEXT NOT NULL
     )
     ''')
+
+connect2 = sqlite3.connect('courses.db')
+connect2.execute('''
+    CREATE TABLE IF NOT EXISTS Courses (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    course_name TEXT NOT NULL,
+    keywords TEXT NOT NULL
+    )
+    ''')
+
 
 #################################
 #probably don't need this
 @app.route('/join', methods=['POST'])
 def join():
     major = request.form.get('major', '').strip()
-    class_name = request.form.get('class', '').strip()
+    course_name = request.form.get('course', '').strip()
 
-    if not major and not class_name:
+    if not major and not course_name:
         return render_template(
             "index.html",
-            message="Please enter a major or a class."
+            message="Please enter a major or a course."
         )
 
-    with sqlite3.connect("app.db") as db:
+    with sqlite3.connect("majors.db") as db:
         cursor = db.cursor()
         cursor.execute(
-            "INSERT INTO Classes (major, class) VALUES (?, ?)",
-            (major or None, class_name or None)
+            "INSERT INTO Classes (major, course) VALUES (?, ?)",
+            (major or None, course_name or None)
         )
         db.commit()
 
