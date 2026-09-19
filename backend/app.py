@@ -25,7 +25,7 @@ def search():
     body = {
         "job_titles": ["Software Engineer"],
         "keywords": [keyword],
-        "limit": 10,
+        "limit": 2,
         "job_types": ["Internship"],
     }
 
