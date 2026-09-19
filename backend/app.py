@@ -39,8 +39,8 @@ connect = sqlite3.connect('app.db')
 connect.execute('''
     CREATE TABLE IF NOT EXISTS Classes (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    major TEXT,
-    class TEXT
+    major TEXT NOT NULL,
+    class TEXT NOT NULL
     )
     ''')
 
