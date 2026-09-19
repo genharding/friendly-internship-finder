@@ -13,11 +13,9 @@ app = Flask(__name__, template_folder=os.path.abspath("../frontend/templates"))
 def home():
     return render_template("index.html")
 
-@app.route('/search', methods=['GET', 'POST'])
+@app.route('/search', methods=['POST'])
 def search():
-    if request.method == 'POST':
-        keywords = request.form.get('keyword')
-        return 'waow it work'
+    keyword = request.form.get('keywords')
 
     url = "https://api.hirebase.org/v2/jobs/search"
     headers = {
@@ -26,7 +24,7 @@ def search():
     }
     body = {
         "job_titles": ["Software Engineer"],
-        "keywords": ["Python"],
+        "keywords": [keyword],
         "limit": 10,
         "job_types": ["Internship"],
     }
@@ -34,8 +32,12 @@ def search():
     response = requests.post(url, json=body, headers=headers)
     data = response.json()
 
-    return data
+    return render_template("listings.html")
 
+
+
+
+###May or may not need either
 connect = sqlite3.connect('majors.db')
 connect.execute('''
     CREATE TABLE IF NOT EXISTS Majors (
@@ -53,7 +55,6 @@ connect2.execute('''
     keywords TEXT NOT NULL
     )
     ''')
-
 
 #################################
 #probably don't need this
