@@ -32,7 +32,7 @@ def search():
     response = requests.post(url, json=body, headers=headers)
     data = response.json()
 
-    return data
+    return render_template("listings.html")
 
 
 
