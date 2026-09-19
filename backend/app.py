@@ -16,7 +16,6 @@ def home():
 @app.route('/search', methods=['POST'])
 def search():
     keyword = request.form.get('keywords')
-    print(keyword)
 
     url = "https://api.hirebase.org/v2/jobs/search"
     headers = {
