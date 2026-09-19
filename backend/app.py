@@ -1,3 +1,4 @@
+from dbm import sqlite3
 import os
 from flask import render_template
 from flask import Flask
@@ -9,6 +10,8 @@ app = Flask(__name__, template_folder=os.path.abspath("../frontend/templates"))
 @app.route('/')
 def home():
     return render_template("index.html")
+
+connect = sqlite3.connect('database.db')
 
 # Run the application
 if __name__ == '__main__':
