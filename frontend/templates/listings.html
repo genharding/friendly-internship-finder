@@ -17,7 +17,7 @@
     <main class="container">
       {% for job in jobs %}
       <article>
-        <header><h1>{{job.title}}</h1></header>
+        <header><h1>{{job["job_title"]}}</h1></header>
       </article> {%endfor%}
     </main> 
   </body>
