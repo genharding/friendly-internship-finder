@@ -9,50 +9,54 @@
   </head>
   <body>
     <header class="container">
-        <hgroup>
+        <hgroup style="text-align: center;">
             <h1>Website Name</h1>
             <p>some cool text</p>
         </hgroup>
     </header>
     <main class="container">
-        <h2>Pick an option</h2>
-        <div class="grid">
-            <form action="POST">
-                <fieldset>
-                    <label>
-                        Select Your Major
+        <article>
+            <header>
+                <h3>Pick an option</h2>
+            </header>
+            <div class="grid">
+                <form action="POST">
+                    <fieldset>
+                        <label>
+                            Select Your Major
+                            <input
+                                type="search"
+                                name="search"
+                                placeholder="Search"
+                                aria-label="Search"
+                            />
+                        </label>
                         <input
-                            type="search"
-                            name="search"
-                            placeholder="Search"
-                            aria-label="Search"
+                            type="submit"
+                            value="Find Jobs"
                         />
-                    </label>
-                    <input
-                        type="submit"
-                        value="Find Jobs"
-                    />
-                </fieldset>
-            </form>
-            <h2>OR</h2>
-            <form action="POST">
-                <fieldset>
-                    <label>
-                        Select A Class
+                    </fieldset>
+                </form>
+                <h3 style="text-align: center;">OR</h3>
+                <form action="POST">
+                    <fieldset>
+                        <label>
+                            Select A Class
+                            <input
+                                type="search"
+                                name="search"
+                                placeholder="Search"
+                                aria-label="Search"
+                            />
+                        </label>
                         <input
-                            type="search"
-                            name="search"
-                            placeholder="Search"
-                            aria-label="Search"
+                            type="submit"
+                            value="Find Jobs"
                         />
-                    </label>
-                    <input
-                        type="submit"
-                        value="Find Jobs"
-                    />
-                </fieldset>
-            </form>
-        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </article>
     </main>
   </body>
 </html>
