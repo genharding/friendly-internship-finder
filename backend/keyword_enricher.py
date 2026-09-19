@@ -9,7 +9,7 @@ from langchain_groq import ChatGroq
 load_dotenv()
 
 BATCH_SIZE = 25
-MODEL = "openai/gpt-oss-120b"
+MODEL = "openai/gpt-oss-20b"
 
 PROMPT_TEMPLATE = """You generate short skill/topic keyword tags for university courses,
 to help match students to relevant internships based on coursework.
