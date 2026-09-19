@@ -2,6 +2,7 @@ import sqlite3
 from werkzeug.wsgi import responder
 import os
 from flask import render_template, request, Flask
+import requests
 
 
 # Initialize the Flask application
