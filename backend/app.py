@@ -1,9 +1,9 @@
-from dbm import sqlite3
-from pika.spec import methods
+import sqlite3
 from werkzeug.wsgi import responder
 import os
+from flask import render_template, request, Flask
 import requests
-from flask import Flask, render_template, request
+
 
 # Initialize the Flask application
 app = Flask(__name__, template_folder=os.path.abspath("../frontend/templates"))
@@ -36,7 +36,36 @@ def search():
 
     return data
 
-connect = sqlite3.connect('database.db')
+connect = sqlite3.connect('app.db')
+connect.execute('''
+    CREATE TABLE IF NOT EXISTS Classes (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    major TEXT NOT NULL,
+    class TEXT NOT NULL
+    )
+    ''')
+
+@app.route('/join', methods=['POST'])
+def join():
+    major = request.form.get('major', '').strip()
+    class_name = request.form.get('class', '').strip()
+
+    if not major and not class_name:
+        return render_template(
+            "index.html",
+            message="Please enter a major or a class."
+        )
+
+    with sqlite3.connect("app.db") as db:
+        cursor = db.cursor()
+        cursor.execute(
+            "INSERT INTO Classes (major, class) VALUES (?, ?)",
+            (major or None, class_name or None)
+        )
+        db.commit()
+
+    return render_template(
+        "index.html"    )
 
 # Run the application
 if __name__ == '__main__':
