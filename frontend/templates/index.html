@@ -24,13 +24,13 @@
                     <fieldset>
                         <label>
                             Select Your Major
-                            <input
-                                id="keyword"
-                                type="search"
-                                name="search"
-                                placeholder="Search"
-                                aria-label="Search"
-                            />
+                            <select name="major" aria-label="select your major" required>
+                                <option selected disabled value ="">
+                                    Select Your Major
+                                </option>
+                                <option>Computer Science</option>
+                                <option> Evil</option>
+                            </select>
                         </label>
                         <input
                             type="submit"
