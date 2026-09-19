@@ -45,6 +45,8 @@ connect.execute('''
     )
     ''')
 
+#################################
+#probably don't need this
 @app.route('/join', methods=['POST'])
 def join():
     major = request.form.get('major', '').strip()
@@ -66,6 +68,7 @@ def join():
 
     return render_template(
         "index.html"    )
+#################################
 
 # Run the application
 if __name__ == '__main__':
