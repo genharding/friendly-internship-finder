@@ -19,27 +19,31 @@
             <header>
                 <h3>Pick an option</h2>
             </header>
-            <div class="grid">
-                <form action="/search" method="post">
-                    <fieldset>
-                        <label>
-                            Select Your Major
-                            <select name="major" aria-label="select your major" required>
-                                <option selected disabled value ="">
-                                    Select Your Major
-                                </option>
-                                <option>Computer Science</option>
-                                <option> Evil</option>
-                            </select>
-                        </label>
-                        <input
-                            type="submit"
-                            value="Find Jobs"
-                        />
-                    </fieldset>
-                </form>
-            </div>
+            <form action="/search" method="post">
+                <fieldset>
+                    <label>
+                        Select Your Major
+                        <select name="major" aria-label="select your major" required>
+                            <option selected disabled value ="">
+                                Select Your Major
+                            </option>
+                            <option>Computer Science</option>
+                            <option> Evil</option>
+                        </select>
+                    </label>
+                    <input
+                        type="submit"
+                        value="Find Jobs"
+                    />
+                </fieldset>
+            </form>
         </article>
+        <form action="search" method="post">
+            <fieldset>
+                <input type="text" id="keywords">
+                <input type="submit">
+            </fieldset>
+        </form>
     </main>
   </body>
 </html>
