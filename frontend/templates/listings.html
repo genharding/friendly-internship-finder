@@ -15,9 +15,10 @@
         </hgroup>
     </header>
     <main class="container">
+      {% for job in jobs %}
       <article>
-        <header><h1>Job Title</h1></header>
-      </article>
+        <header><h1>{{job.title}}</h1></header>
+      </article> {%endfor%}
     </main> 
   </body>
 </html>
