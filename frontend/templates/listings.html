@@ -17,9 +17,21 @@
     <main class="container">
       {% for job in jobs %}
       <article>
-        <header><h1>{{job["job_title"]}}</h1></header>
-        {{job["description"]|safe}}
-      </article> {%endfor%}
+        <header style="display: flex; gap: 20px;">
+            <img src="{{ job['company_logo'] }}" alt="Logo" height="100" width="100">
+            <hgroup>
+              <h1>{{ job["job_title"] }}</h1>
+              <a href="https://{{ job['company_link'] }}" target="_blank"><p>{{ job["company_name"] }}</p></a>
+            </hgroup>
+        </header>
+        {{ job["description"] | safe }}
+        <footer>
+          <form action="{{ job['application_link']}}" target="_blank">
+            <button type="submit">Apply</button>
+          </form>
+        </footer>
+      </article>
+      {% endfor %}
     </main> 
   </body>
 </html>
