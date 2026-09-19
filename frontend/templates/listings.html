@@ -5,16 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="color-scheme" content="light dark">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.pumpkin.min.css">
-    <title>Friendly Internship Finder</title>
+    <title>Your Matches — Campus Career Navigator</title>
   </head>
   <body>
     <header class="container">
         <hgroup style="text-align: center;">
-            <h1>Friendly Internship Finder</h1>
-            <p>This website is intended to help students find internships based on their course load.</p>
+            <h1>Your Matches</h1>
+            <p><a href="/">&larr; Search again</a></p>
         </hgroup>
     </header>
     <main class="container">
+      {% if error %}
+      <article style="border-color: var(--pico-del-color);">
+        <p>{{ error }}</p>
+        <p>Try again in a moment, or head back and adjust your search.</p>
+      </article>
+      {% elif not jobs %}
+      <article>
+        <p>No matching internships found. Try selecting a few more courses or broadening your interests.</p>
+      </article>
+      {% endif %}
       {% for job in jobs %}
       <article>
         <header style="display: flex; gap: 20px;">
@@ -24,6 +34,9 @@
               <a href="https://{{ job['company_link'] }}" target="_blank"><p>{{ job["company_name"] }}</p></a>
             </hgroup>
         </header>
+        {% if job.rationale %}
+        <p><strong>Why this fits you:</strong> {{ job["rationale"] }}</p>
+        {% endif %}
         {{ job["description"] | safe }}
         <footer>
           <form action="{{ job['application_link']}}" target="_blank">
@@ -32,6 +45,6 @@
         </footer>
       </article>
       {% endfor %}
-    </main> 
+    </main>
   </body>
 </html>

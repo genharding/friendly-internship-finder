@@ -5,45 +5,76 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="color-scheme" content="light dark">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.pumpkin.min.css">
-    <title>Hello world!</title>
+    <title>Campus Career Navigator</title>
   </head>
   <body>
     <header class="container">
         <hgroup style="text-align: center;">
-            <h1>Friendly Internship Finder</h1>
-            <p>This website is intended to help students find internships based on their course load.</p>
+            <h1>Campus Career Navigator</h1>
+            <p>Tell us your major, the courses you've taken, and your interests — we'll find internships that actually fit.</p>
         </hgroup>
     </header>
     <main class="container">
         <article>
-            <header>
-                <h3>Pick an option</h2>
-            </header>
-            <form action="/search" method="post">
-                <fieldset>
-                    <label>
-                        Select Your Major
-                        <select name="major" aria-label="select your major" required>
-                            <option selected disabled value ="">
-                                Select Your Major
-                            </option>
-                            <option>Computer Science</option>
-                            <option> Evil</option>
-                        </select>
-                    </label>
-                    <input
-                        type="submit"
-                        value="Find Jobs"
-                    />
-                </fieldset>
+            <form action="/recommend" method="post" id="navigator-form">
+                <label>
+                    Major
+                    <select name="major" id="major-select" required>
+                        <option selected disabled value="">Select your major</option>
+                        {% for major in majors %}
+                        <option value="{{ major }}">{{ major }}</option>
+                        {% endfor %}
+                    </select>
+                </label>
+
+                <label>
+                    Courses you've taken
+                    <fieldset id="course-list" style="max-height: 240px; overflow-y: auto; border: 1px solid var(--pico-muted-border-color); padding: 0.75rem; border-radius: var(--pico-border-radius);">
+                        <em>Select a major to see its courses.</em>
+                    </fieldset>
+                </label>
+
+                <label>
+                    What kind of work interests you?
+                    <input type="text" name="interests" placeholder="e.g. backend development, data analysis, robotics">
+                </label>
+
+                <input type="submit" value="Find My Internships" id="submit-btn">
             </form>
         </article>
-        <form action="search" method="post">
-            <fieldset>
-                <input type="text" id="keywords" name="keywords">
-                <input type="submit">
-            </fieldset>
-        </form>
     </main>
+    <script>
+        const majorSelect = document.getElementById('major-select');
+        const courseList = document.getElementById('course-list');
+        const submitBtn = document.getElementById('submit-btn');
+
+        majorSelect.addEventListener('change', async () => {
+            const major = majorSelect.value;
+            courseList.innerHTML = '<em>Loading courses...</em>';
+            submitBtn.disabled = true;
+            try {
+                const res = await fetch('/courses?major=' + encodeURIComponent(major));
+                const data = await res.json();
+                if (!data.courses || data.courses.length === 0) {
+                    courseList.innerHTML = '<em>No courses found for this major yet.</em>';
+                } else {
+                    courseList.innerHTML = data.courses.map((course, i) => `
+                        <label>
+                            <input type="checkbox" name="courses" value="${course.replace(/"/g, '&quot;')}">
+                            ${course}
+                        </label>
+                    `).join('');
+                }
+            } catch (e) {
+                courseList.innerHTML = '<em>Could not load courses right now.</em>';
+            }
+            submitBtn.disabled = false;
+        });
+
+        document.getElementById('navigator-form').addEventListener('submit', () => {
+            submitBtn.setAttribute('aria-busy', 'true');
+            submitBtn.value = 'Finding internships...';
+        });
+    </script>
   </body>
 </html>
