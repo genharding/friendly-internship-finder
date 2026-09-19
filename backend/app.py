@@ -1,16 +1,8 @@
-<<<<<<< HEAD
 import sqlite3
 from werkzeug.wsgi import responder
 import os
 from flask import render_template, request, Flask
-=======
-from dbm import sqlite3
-from pika.spec import methods
-from werkzeug.wsgi import responder
-import os
-import requests
-from flask import Flask, render_template, request
->>>>>>> 517164a5858cf2987aee3fa1135a4940c0852063
+
 
 # Initialize the Flask application
 app = Flask(__name__, template_folder=os.path.abspath("../frontend/templates"))
