@@ -3,7 +3,7 @@ from flask import render_template
 from flask import Flask
 
 # Initialize the Flask application
-app = Flask(__name__, template_folder=os.path.abspath("../internship-searcher-other/templates"))
+app = Flask(__name__, template_folder=os.path.abspath("../frontend/templates"))
 
 # Define a route for the homepage
 @app.route('/')
