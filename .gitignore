@@ -8,3 +8,4 @@ Thumbs.db
 .DS_Store
 *.pyc
 *.exe
+backend/__pycache__/
