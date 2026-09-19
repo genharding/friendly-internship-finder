@@ -1,32 +1,58 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <link
-            rel="stylesheet"
-            href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.classless.red.min.css"
-        >
-    </head>
-    <body>
-        <main>
-            <h3>Enter Your Name</h3>
-            <form method="post">
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.pumpkin.min.css">
+    <title>Hello world!</title>
+  </head>
+  <body>
+    <header class="container">
+        <hgroup>
+            <h1>Website Name</h1>
+            <p>some cool text</p>
+        </hgroup>
+    </header>
+    <main class="container">
+        <h2>Pick an option</h2>
+        <div class="grid">
+            <form action="POST">
                 <fieldset>
                     <label>
-                        SELECT A CLASS
+                        Select Your Major
+                        <input
+                            type="search"
+                            name="search"
+                            placeholder="Search"
+                            aria-label="Search"
+                        />
                     </label>
-                    <select name="class" aria-label="Select a class..." required>
-                        <option selected disabled value="">
-                            Select a class...
-                        </option>
-                        <option>something </option>
-                        <option>a class</option>
-                        <option>another one</option>
-                        <option>we'd have to do this better</option>
-                        <option>from a databse for smthn</option>
-                    </select>
+                    <input
+                        type="submit"
+                        value="Find Jobs"
+                    />
                 </fieldset>
-                <input type="submit" value="Submit">
             </form>
-        </main>
-    </body>
+            <h2>OR</h2>
+            <form action="POST">
+                <fieldset>
+                    <label>
+                        Select A Class
+                        <input
+                            type="search"
+                            name="search"
+                            placeholder="Search"
+                            aria-label="Search"
+                        />
+                    </label>
+                    <input
+                        type="submit"
+                        value="Find Jobs"
+                    />
+                </fieldset>
+            </form>
+        </div>
+    </main>
+  </body>
 </html>
