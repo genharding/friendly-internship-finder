@@ -62,9 +62,12 @@ Here is some documentation regarding Groq's API, which is what we have used in t
 
 # Frameworks Used
 
-[![Css](https://img.shields.io/badge/Email-red?style=for-the-badge&logo=gmail&logoColor=white)])&nbsp;&nbsp;&nbsp;
-[![Flask](https://img.shields.io/badge/LinkedIn-blue?style=for-the-badge&logo=linkedin&logoColor=white)]&nbsp;&nbsp;&nbsp;
-[![Groq](https://img.shields.io/badge/Publication-pink?style=for-the-badge)]
+- Groq
+- CSS
+- Flask
+- html
+- python
+- sqllite
 
 # License
 If you would like to modify the code please follow the Apache License 2.0: [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0)
