@@ -61,13 +61,23 @@ OR, just directly access this url: https://friendlyinternshipfinder.com/
 Here is some documentation regarding Groq's API, which is what we have used in this project to help search for internships and format the results: [Groq Documentation](https://platform.openai.com/docs/guides/text-generation). We also used hirebase api to help find internships a lot faster than manually [Hirebase Documentation](https://www.hirebase.org/docs/api-reference/jobs/search-post)
 
 # Frameworks Used
+External libraries and frameworks used:
 
-- Groq
-- CSS
-- Flask
+- For frontend we used HTML with Pico CSS.
+
+- For backend we used Flask, LangChain, Groq, and Hirebase.
+
+- For our database we used SQLite.
+
+- Our web scraper uses Playwright and LangChain.
+
+Built With:
+- css
+- flask
+- groq
 - html
 - python
-- sqllite
+- sqlite
 
 # License
 If you would like to modify the code please follow the Apache License 2.0: [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0)
