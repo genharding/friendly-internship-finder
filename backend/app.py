@@ -113,7 +113,7 @@ def search_internships(job_titles: str, keywords: str) -> str:
     body = {
         "job_titles": title_list or ["Software Engineer"],
         "keywords": keyword_list,
-        "limit": 3,
+        "limit": 10,
         "job_types": ["Internship"],
     }
 
