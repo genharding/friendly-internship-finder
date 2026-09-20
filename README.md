@@ -42,7 +42,7 @@ When you first navigate the website, it brings you to the main page where you wi
 
 Heres how to run the application, depending on the language:
 
-### For Python Version
+### To run it:
 
 activate the python venv with `. .venv/bin/activate`
 
