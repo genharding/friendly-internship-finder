@@ -19,16 +19,40 @@
 
 # Potential Next Steps
 
+Adding different countries so people from diffent countries and provinces to specify search results more efficiently. Different model that is faster but takes up less space. Using databricks to clean data, and store it more efficiently. 
+
 # Installation
 #### TO USE
 1. `git clone https://github.com/genharding/friendly-internship-finder.git` repository and `cd ai-web-app`
-2. `pip install Flask`
-3. `pip install -r requirements.txt`
-3. add `.env` file in top ai-web-app directory and add api-key <br>
-```OPENAI_API_KEY="{your api key}"``` <br>
-    (note: purchase key at <a href="https://platform.openai.com/api-keys">OpenAI Platform</a>)
-4. run "python app.py" or "python3 app.py" and test in http://127.0.0.1:5000
-6. To stop the program type "CTRL + C"
+2. `pip install -r requirements.txt`
+3. add `.env` file in the main directory (Use a hirebase api key, groq api key)
+
+Heres how to run the application, depending on the language:
+
+### For Python Version
+
+activate the python venv with `. .venv/bin/activate`
+
+run `flask run --debug`
+
+*127.0.0.1:5000* is the website mockup
+
+*127.0.0.1:5000/search* is the Hirebase api call
+
+
+
+OR, just directly access this url: https://friendlyinternshipfinder.com/
+
+
+### For JavaScript Version
+
+before running, make sure to install nodejs and npm
+
+to run, just type: npm run dev
+
+backend for now is flask. to run just type: python app.py in the command line
+
+
 
 # Usage
 
@@ -43,20 +67,3 @@ On behalf of our team, we would like to thank the VT and MLH Hacks organizers, m
 
 
 
-# For Python Version
-
-Navigate into /backend and activate the python venv with `. .venv/bin/activate`
-
-run `flask run --debug`
-
-*127.0.0.1:5000* is the website mockup
-
-*127.0.0.1:5000/search* is the Hirebase api call
-
-# For JavaScript Version
-
-before running, make sure to install nodejs and npm
-
-to run, just type: npm run dev
-
-backend for now is flask. to run just type: python app.py in the command line
