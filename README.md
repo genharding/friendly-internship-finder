@@ -1,4 +1,4 @@
-# friend_project
+# friendly_internship_finder_project
 
 ## Authors: Gentry Harding, Andrew Woodhouse, Saige Antolin, Yomna Elmousalami
 
@@ -13,10 +13,27 @@
 - [License](#license)
 - [Credits and Acknowledgements](#credits-and-acknowledgements)
 
+# Approach
+
+# Key Findings and Insights 
+
+# Potential Next Steps
+
+# Installation
+#### TO USE
+1. `git clone https://github.com/genharding/friendly-internship-finder.git` repository and `cd ai-web-app`
+2. `pip install Flask`
+3. `pip install -r requirements.txt`
+3. add `.env` file in top ai-web-app directory and add api-key <br>
+```OPENAI_API_KEY="{your api key}"``` <br>
+    (note: purchase key at <a href="https://platform.openai.com/api-keys">OpenAI Platform</a>)
+4. run "python app.py" or "python3 app.py" and test in http://127.0.0.1:5000
+6. To stop the program type "CTRL + C"
+
+# Usage
 
 # Documentation
-
-Here is some documentation regarding Groq's API, which is what we have used in this project to help search for internships and format the results: [Text Generation Open AI](https://platform.openai.com/docs/guides/text-generation).
+Here is some documentation regarding Groq's API, which is what we have used in this project to help search for internships and format the results: [Groq Documentation](https://platform.openai.com/docs/guides/text-generation).
 
 # License
 If you would like to modify the code please follow the Apache License 2.0: [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0)
