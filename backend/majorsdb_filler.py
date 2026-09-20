@@ -12,6 +12,8 @@ from playwright.sync_api import sync_playwright
 # (e.g. zero-width spaces) that show up in scraped subject names.
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", errors="replace")
 
+
+# Checks for web scraper from Virginia Tech's course catalog
 BASE_URL = "https://catalog.vt.edu/course-descriptions/"
 USER_AGENT = (
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
@@ -33,7 +35,7 @@ def check_robots_allowed(url: str) -> bool:
 
 ZERO_WIDTH_SPACE = chr(0x200B)
 
-
+# Cleans up text formatting
 def sanitize_text(text: str) -> str:
     cleaned = text.replace(ZERO_WIDTH_SPACE, "").replace("\xa0", " ")
     return re.sub(r"\s+", " ", cleaned).strip()
