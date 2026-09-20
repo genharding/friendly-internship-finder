@@ -8,6 +8,7 @@
 - [Potential Next Steps](#potential-next-steps)
 - [Installation](#installation)
 - [Documentation](#documentation)
+- [Frameworks Used](#frameworks)
 - [License](#license)
 - [Credits and Acknowledgements](#credits-and-acknowledgements)
 
@@ -58,6 +59,12 @@ OR, just directly access this url: https://friendlyinternshipfinder.com/
 
 # Documentation
 Here is some documentation regarding Groq's API, which is what we have used in this project to help search for internships and format the results: [Groq Documentation](https://platform.openai.com/docs/guides/text-generation). We also used hirebase api to help find internships a lot faster than manually [Hirebase Documentation](https://www.hirebase.org/docs/api-reference/jobs/search-post)
+
+# Frameworks Used
+
+[![Css](https://img.shields.io/badge/Email-red?style=for-the-badge&logo=gmail&logoColor=white)])&nbsp;&nbsp;&nbsp;
+[![Flask](https://img.shields.io/badge/LinkedIn-blue?style=for-the-badge&logo=linkedin&logoColor=white)]&nbsp;&nbsp;&nbsp;
+[![Groq](https://img.shields.io/badge/Publication-pink?style=for-the-badge)]
 
 # License
 If you would like to modify the code please follow the Apache License 2.0: [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0)
