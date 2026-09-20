@@ -48,7 +48,7 @@ def ensure_schema():
 
 ensure_schema()
 
-
+# Initiates majors for website
 @app.route("/")
 def home():
     with sqlite3.connect(db_path("majors.db")) as db:
