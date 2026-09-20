@@ -16,7 +16,7 @@ load_dotenv()
 BACKEND_DIR = os.path.dirname(os.path.abspath(__file__))
 HIREBASE_API_KEY = os.environ.get("HIREBASE_API_KEY")
 
-app = Flask(__name__, template_folder=os.path.abspath("../frontend/templates"))
+app = Flask(__name__, template_folder=os.path.abspath("./templates"))
 
 
 def db_path(name):
@@ -113,7 +113,7 @@ def search_internships(job_titles: str, keywords: str) -> str:
     body = {
         "job_titles": title_list or ["Software Engineer"],
         "keywords": keyword_list,
-        "limit": 10,
+        "limit": 3,
         "job_types": ["Internship"],
     }
 
