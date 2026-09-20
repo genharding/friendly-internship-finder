@@ -8,7 +8,7 @@
 - [Potential Next Steps](#potential-next-steps)
 - [Installation](#installation)
 - [Documentation](#documentation)
-- [Frameworks Used](#frameworks)
+- [Frameworks Used](#frameworks-used)
 - [License](#license)
 - [Credits and Acknowledgements](#credits-and-acknowledgements)
 
